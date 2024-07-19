@@ -1,29 +1,11 @@
+De manera individual realizar lo siguiente y subir los resultados en consola al aula virtual:
 
-const express       = require('express');
-const cors          = require('cors');
-const logger        = require('morgan');
-const http = require('http');
-const app = express();
+Crear una rama en su repositorio personal creado la semana pasada.
+Agregar al menos 20 líneas de código diferente.
+Probar los comandos rebase, merge.
 
-app.use(logger('dev'));
+Mientras realizan lo anterior, el profesor arruinará parte de sus repositorios con intención. Utilizar los siguientes comandos:
 
-//validacion de rutas
-app.use(cors());
-
-app.use(express.json({limit:"50mb"}));  
-app.use(express.urlencoded({limit:"50mb" , extended: false }));  
-
-
-require("./routes/index")(app);
-
-app.use(express.static('./public'));
-
-app.get('*', (req, res) => res.status(200).send({
-     message: 'Index.',
-}));
-
-const port = parseInt(process.env.PORT, 10) || 3000;
-app.set('port', port);
-const server = http.createServer(app);
-server.listen(port);
-module.exports = app;
+Git blame a cada archivo cambiado.
+Git log para revisar los commits.
+Git revert para volver a la última versión estable.
